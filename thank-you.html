@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You – RBA Realtors</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', 'Helvetica Neue', sans-serif;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background: linear-gradient(135deg, #eef2ff 0%, #f0f7ff 55%, #f8fafc 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(15, 31, 53, 0.10), 0 0 0 1px rgba(26, 79, 214, 0.06);
+      padding: 52px 40px 44px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      animation: popIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.94) translateY(18px); }
+      to   { opacity: 1; transform: scale(1)    translateY(0);    }
+    }
+
+    /* ── Icon ── */
+    .icon-wrap {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, rgba(26,79,214,0.10), rgba(26,79,214,0.04));
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+    }
+    .icon-wrap svg {
+      width: 34px;
+      height: 34px;
+      stroke: #1a4fd6;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Text ── */
+    h1 {
+      font-size: clamp(1.9rem, 6vw, 2.5rem);
+      font-weight: 800;
+      color: #0f1f35;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .subheading {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #1a4fd6;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .body-text {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #64748b;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    /* ── Reassurance Pills ── */
+    .reassurance {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f8faff;
+      border: 1px solid rgba(26,79,214,0.10);
+      border-radius: 50px;
+      padding: 11px 18px;
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .pill-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, rgba(26,79,214,0.12), rgba(26,79,214,0.04));
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .pill-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: #1a4fd6;
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Buttons ── */
+    .btn-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 15px 20px;
+      background: #25D366;
+      color: #ffffff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(37, 211, 102, 0.38);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      margin-bottom: 12px;
+    }
+    .btn-whatsapp:hover {
+      background: #1fba58;
+      transform: scale(1.025) translateY(-1px);
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.50);
+    }
+    .btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+      flex-shrink: 0;
+    }
+
+    .btn-back {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background: transparent;
+      color: #64748b;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 1.5px solid #e2e8f0;
+      text-decoration: none;
+      text-align: center;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .btn-back:hover {
+      border-color: #1a4fd6;
+      color: #1a4fd6;
+      background: rgba(26,79,214,0.04);
+    }
+
+    /* ── Footer Note ── */
+    .footer-note {
+      margin-top: 28px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    /* ── Mobile fine-tune ── */
+    @media (max-width: 420px) {
+      .card { padding: 40px 24px 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Check icon -->
+    <div class="icon-wrap">
+      <svg viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <!-- Main message -->
+    <h1>Thank You! 🎉</h1>
+    <p class="subheading">Your request has been received.</p>
+    <p class="body-text">Our team will contact you shortly<br>with full details.</p>
+
+    <!-- Reassurance -->
+    <div class="reassurance">
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        We usually respond within 2 hours
+      </div>
+      <div class="pill">
+        <div class="pill-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+          </svg>
+        </div>
+        Keep your phone available
+      </div>
+    </div>
+
+    <!-- WhatsApp CTA -->
+    <a
+      href="https://wa.me/91XXXXXXXXXX?text=I%20just%20submitted%20a%20request%20for%20the%20Jyotinagar%20property"
+      class="btn-whatsapp"
+      target="_blank"
+      rel="noopener"
+    >
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97s-.47-.15-.67.15-.77.97-.94 1.17-.35.22-.64.07a8.14 8.14 0 01-2.4-1.48 9.01 9.01 0 01-1.66-2.07c-.17-.3 0-.46.13-.6.13-.13.3-.35.44-.52.14-.17.19-.3.28-.5.1-.2.05-.37-.02-.52s-.67-1.62-.92-2.22c-.24-.58-.49-.5-.67-.51h-.57a1.1 1.1 0 00-.8.37A3.36 3.36 0 007 9.62a5.83 5.83 0 001.22 3.1 13.38 13.38 0 005.13 4.52c.72.3 1.28.48 1.72.62.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.3.17-1.42s-.3-.2-.6-.35zM12.05 21.8A9.77 9.77 0 016.6 20l-.35-.21-3.65.96.98-3.56-.23-.37A9.77 9.77 0 012.2 12a9.85 9.85 0 0116.8-6.97A9.77 9.77 0 0121.8 12a9.86 9.86 0 01-9.75 9.8zm8.4-18.17A11.82 11.82 0 0012.05 0C5.4 0 .02 5.38 0 12.04a11.97 11.97 0 001.6 6L0 24l6.12-1.6a11.97 11.97 0 005.93 1.51h.01c6.65 0 12.04-5.38 12.05-12.04a11.97 11.97 0 00-3.66-8.44z"/>
+      </svg>
+      Chat on WhatsApp Now
+    </a>
+
+    <!-- Back to home -->
+    <a href="index.html" class="btn-back">← Go Back to Home</a>
+
+    <p class="footer-note">© 2025 RBA Realtors · RERA Registered</p>
+
+  </div>
+
+</body>
+</html>
